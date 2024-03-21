@@ -13,7 +13,7 @@ import GetOrder from "./components/GetOrder";
 
 function App() {
   const [hasOrder, setHasOrder] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
