@@ -6,14 +6,14 @@
 * {
   padding: 0;
   margin: 0;
-}
-
-body {
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .loading {
@@ -70,4 +70,12 @@ html {
     width: 100%;
     max-width: 100%;
   }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }

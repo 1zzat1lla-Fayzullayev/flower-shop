@@ -30,7 +30,7 @@ function AllFlowers() {
               <h1>All Flowers</h1>
             )}
 
-            <div className="flowers-container">
+            <div>
               {allFlowers.map((v, i) => {
                 return <FlowerCard v={v} key={i} />;
               })}

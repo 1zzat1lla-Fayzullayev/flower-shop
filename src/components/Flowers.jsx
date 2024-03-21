@@ -6,21 +6,9 @@ import Wrapper from "../layout/Wrapper";
 function Flowers({ category, flowers }) {
   // const flowers = useSelector(state => state.flowers.array)
   const allFlowers = useSelector((state) => state.flowers.array);
-  const [isMobile, setIsMobile] = useState(false);
   const CategoryFlowers = allFlowers.filter((f) => f.categoryId == category.id);
 
   // console.log(category.title);
-
-  useEffect(() => {
-    const checkIsMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    window.addEventListener("resize", checkIsMobile);
-    checkIsMobile();
-    return () => {
-      window.removeEventListener("resize", checkIsMobile);
-    };
-  }, []);
 
   if (JSON.stringify(flowers) == "[]") {
     return (
@@ -46,7 +34,7 @@ function Flowers({ category, flowers }) {
           <h2>{category.title}</h2>
         </div>
 
-        <div className={`cards ${isMobile ? "" : "aos-animate"} mt-[50px]`}>
+        <div className="cards mt-[50px]">
           <Wrapper>
             <div className="w-full flex justify-center items-center flex-wrap gap-[20px]">
               {CategoryFlowers.map((v, i) => {

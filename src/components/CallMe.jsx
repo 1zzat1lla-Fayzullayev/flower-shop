@@ -38,6 +38,7 @@ function CallMe() {
       <div
         className="font-Poppins bg-base-300 max-w-[250px] md:max-w-[800px] mx-auto h-[200px] rounded-[20px] flex justify-center items-center mt-[100px]"
         id="CallMe"
+        data-aos="fade-up"
       >
         <form
           onSubmit={(e) => handLeSubmit(e)}

@@ -71,7 +71,11 @@ function SwiperFlowers() {
 
   const renderSlides = () => {
     return FlowersSiper.map((flower, index) => (
-      <div key={index} className="flowerSwiper mt-[50px] font-Poppins p-1">
+      <div
+        key={index}
+        className="flowerSwiper mt-[50px] font-Poppins p-1"
+        data-aos="fade-up"
+      >
         <div className="image">
           <img
             src={flower.image}

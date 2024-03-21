@@ -62,7 +62,7 @@ function Header() {
 
   return (
     <header className="fixed w-full z-[9999] font-Poppins">
-      <div className="navbar bg-base-100 w-full">
+      <div className="navbar bg-base-100 w-full p-3">
         <div className="navbar-start">
           <div className="dropdown">
             {/* Hamburger */}

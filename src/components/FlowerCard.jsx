@@ -42,12 +42,13 @@ function FlowerCard({ v }) {
       return limitedWords.join(" ") + (words.length > 8 ? " ..." : "");
     }
     return description;
-  }; //gap yo lkn oxwamadi wunisi nmaga qaren nmasi oxwamagan zorku anu text 8 ta sozdan owsa ... cqarb qoy dganmande lkn iwlamadi 8taku lorem qb berb korin kopayb ketvuradde lekn oxiriga  ... qowb qoyadi nm
+  };
 
   return (
     <div
       onClick={() => handleNavToSingleFlower(v, v._id)}
       className="card font-Poppins"
+      data-aos="fade-up"
     >
       <div className="flex justify-center items-center">
         <div className="card max-w-[250px] bg-base-100 shadow-xl">

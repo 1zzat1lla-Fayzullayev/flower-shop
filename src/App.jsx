@@ -13,11 +13,23 @@ import GetOrder from "./components/GetOrder";
 
 function App() {
   const [hasOrder, setHasOrder] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(true);
+    const timeout = setTimeout(() => {
+      setLoading(false);
     }, 2000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const initAos = async () => {
+      await Aos.init({
+        duration: 800,
+      });
+      setLoading(false); 
+    };
+    initAos();
   }, []);
 
   // Memoized Header component
@@ -33,20 +45,20 @@ function App() {
     <div>
       <BrowserRouter>
         {loading ? (
+          <span className="loading loading-ring loading-lg"></span>
+        ) : (
           <>
-            <MemoizedHeader setHasOrder={setHasOrder} />
-            <GetOrder hasOrder={hasOrder} setHasOrder={setHasOrder} />
+            <Header />
+            <GetOrder />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="allflowers" element={<AllFlowers />} />
               <Route path="flower/:id" element={<SingleFlower />} />
               <Route path="category/:id" element={<Category />} />
             </Routes>
-            <MemoizedFooter />
-            <MemoizedTell />
+            <Footer />
+            <Tell />
           </>
-        ) : (
-          <span className="loading loading-ring loading-lg"></span>
         )}
       </BrowserRouter>
     </div>

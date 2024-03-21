@@ -26,7 +26,10 @@ function AllCategories() {
         <h1 className="text-3xl font-bold text-base-content">All Categories</h1>
       </div>
       <Wrapper>
-        <div className="mt-10 flex justify-center items-center flex-wrap gap-5">
+        <div
+          className="mt-10 flex justify-center items-center flex-wrap gap-5"
+          data-aos="fade-up"
+        >
           {categories.map((v, i) => (
             <div
               key={i}

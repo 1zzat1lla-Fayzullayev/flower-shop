@@ -29,10 +29,9 @@ function Home() {
   return (
     <div className="w-full font-Poppins">
       <div className="w-full">
-        <div>
-          <Hero />
-          <SwiperFlowers />
-        </div>
+        <Hero />
+        <SwiperFlowers />
+
         <AllCategories />
         {!isLoading ? (
           <>

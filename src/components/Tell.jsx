@@ -23,7 +23,7 @@ function Tell() {
           <img
             src={arrow}
             alt="arrow"
-            className="bg-base-300 rounded-[50%] w-[60px] fixed right-3 top-[80%] cursor-pointer"
+            className="bg-base-300 rounded-[50%] w-[60px] fixed right-2 top-[86%] cursor-pointer"
           />
         </a>
       )}
