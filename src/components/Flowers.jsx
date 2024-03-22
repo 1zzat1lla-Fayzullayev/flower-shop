@@ -33,7 +33,6 @@ function Flowers({ category, flowers }) {
         <div className="text-[25px] font-semibold text-base-content text-center my-[30px]">
           <h2>{category.title}</h2>
         </div>
-
         <div className="cards mt-[50px]">
           <Wrapper>
             <div className="w-full flex justify-center items-center flex-wrap gap-[20px]">

@@ -36,7 +36,7 @@ function AllCategories() {
               onClick={() => navigate(`/category/${v.id}`)}
               className="transition-transform hover:-translate-y-1"
             >
-              <div className="card max-w-[250px] md:max-w-[300px] glass">
+              <div className="card max-w-[250px] md:max-w-[300px] shadow-2xl cursor-pointer">
                 <figure>
                   <img
                     className="object-cover h-[400px] rounded-lg"

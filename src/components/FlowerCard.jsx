@@ -47,11 +47,11 @@ function FlowerCard({ v }) {
   return (
     <div
       onClick={() => handleNavToSingleFlower(v, v._id)}
-      className="card font-Poppins"
+      className="card font-Poppins cursor-pointer"
       data-aos="fade-up"
     >
       <div className="flex justify-center items-center">
-        <div className="card max-w-[250px] bg-base-100 shadow-xl">
+        <div className="card max-w-[250px] bg-base-100 shadow-xl transition-transform hover:-translate-y-1 hover:scale-105">
           <figure>
             <img
               src={`${v.image}`}
