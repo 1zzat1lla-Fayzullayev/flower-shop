@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,38 +12,13 @@ import flower6 from "../assets/flowers/6.jpg";
 
 function SwiperFlowers() {
   const FlowersSiper = [
-    {
-      title: `izzatillado`,
-      image: flower1,
-      id: 1,
-    },
-    {
-      title: `something2`,
-      image: flower2,
-      id: 2,
-    },
-    {
-      title: `something3`,
-      image: flower3,
-      id: 3,
-    },
-    {
-      title: `something4`,
-      image: flower4,
-      id: 4,
-    },
-    {
-      title: `something5`,
-      image: flower5,
-      id: 5,
-    },
-    {
-      title: `something6`,
-      image: flower6,
-      id: 6,
-    },
+    { title: "izzatillado", image: flower1, id: 1 },
+    { title: "something2", image: flower2, id: 2 },
+    { title: "something3", image: flower3, id: 3 },
+    { title: "something4", image: flower4, id: 4 },
+    { title: "something5", image: flower5, id: 5 },
+    { title: "something6", image: flower6, id: 6 },
   ];
-  let sliderRef = useRef(null);
 
   const settings = {
     dots: false,
@@ -56,15 +31,11 @@ function SwiperFlowers() {
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
+        settings: { slidesToShow: 2 },
       },
       {
         breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-        },
+        settings: { slidesToShow: 1 },
       },
     ],
   };
@@ -80,7 +51,7 @@ function SwiperFlowers() {
           <img
             src={flower.image}
             alt={flower.title}
-            className="rounded-[20px] max-w-[300px] lg:max-w-[380px] w-full min-h-[400px] max-h-[400px] object-cover "
+            className="rounded-[20px] max-w-[300px] lg:max-w-[380px] w-full min-h-[400px] max-h-[400px] object-cover"
           />
         </div>
         <div className="categoryname">
@@ -94,9 +65,7 @@ function SwiperFlowers() {
     <Wrapper>
       <div className="SwiperFlowers">
         <div className="slider-container">
-          <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
-            {renderSlides()}
-          </Slider>
+          <Slider {...settings}>{renderSlides()}</Slider>
         </div>
       </div>
     </Wrapper>

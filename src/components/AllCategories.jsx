@@ -20,6 +20,10 @@ function AllCategories() {
     };
   }, []);
 
+  const handleCategoryClick = (categoryId) => {
+    navigate(`/category/${categoryId}`);
+  };
+
   return (
     <div className="py-10">
       <div className="text-center" id="getStart">
@@ -30,22 +34,22 @@ function AllCategories() {
           className="mt-10 flex justify-center items-center flex-wrap gap-5"
           data-aos="fade-up"
         >
-          {categories.map((v, i) => (
+          {categories.map((category, index) => (
             <div
-              key={i}
-              onClick={() => navigate(`/category/${v.id}`)}
-              className="transition-transform hover:-translate-y-1"
+              key={index}
+              onClick={() => handleCategoryClick(category.id)}
+              className="transition-transform hover:-translate-y-1 cursor-pointer"
             >
-              <div className="card max-w-[250px] md:max-w-[300px] shadow-2xl cursor-pointer">
+              <div className="card max-w-[250px] md:max-w-[300px] shadow-2xl">
                 <figure>
                   <img
                     className="object-cover h-[400px] rounded-lg"
-                    src={v.image}
-                    alt={v.title}
+                    src={category.image}
+                    alt={category.title}
                   />
                 </figure>
                 <div className="card-body">
-                  <h2 className="card-title">{v.title}</h2>
+                  <h2 className="card-title">{category.title}</h2>
                 </div>
               </div>
             </div>

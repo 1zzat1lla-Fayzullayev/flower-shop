@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import Wrapper from "../layout/Wrapper";
 
-function CallMe() {
-  const [userNum, setUserNum] = useState("");
 
-  // 7059782474: AAFbkHTcoIY5B - EQWXJazFZtPCR5PGmoRV4
-  // -1002016358863
-  const BOT_TOKEN = "7059782474:AAFbkHTcoIY5B-EQWXJazFZtPCR5PGmoRV4";
-  const chat_id = "-1002016358863";
+const sendTelegramMessage = async (userNum) => {
+  const BOT_TOKEN = "YOUR_BOT_TOKEN";
+  const chat_id = "YOUR_CHAT_ID";
   const telegramAPIURL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-  const text = `user's number: ${userNum}`;
+  const text = `User's number: ${userNum}`;
   const config = {
     headers: {
       "Content-Type": "application/json",
@@ -21,16 +18,20 @@ function CallMe() {
     text,
   };
 
-  const handLeSubmit = (e) => {
-    e.preventDefault();
+  try {
+    await axios.post(telegramAPIURL, data, config);
+    console.log("Message sent successfully");
+  } catch (error) {
+    console.error("Error sending message:", error);
+  }
+};
 
-    axios.post(telegramAPIURL, data, config);
-    // .then(response => {
-    //     console.log('Message sent successfully:', response.data);
-    // })
-    // .catch(error => {
-    //     console.error('Error sending message:', error);
-    // });
+function CallMe() {
+  const [userNum, setUserNum] = useState("");
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    sendTelegramMessage(userNum);
   };
 
   return (
@@ -41,7 +42,7 @@ function CallMe() {
         data-aos="fade-up"
       >
         <form
-          onSubmit={(e) => handLeSubmit(e)}
+          onSubmit={(e) => handleSubmit(e)}
           className="flex flex-col md:flex-row justify-center items-center gap-2"
         >
           <label className="input input-bordered flex items-center gap-2 w-[230px] md:w-[100%]">
@@ -50,6 +51,7 @@ function CallMe() {
               type="number"
               className="grow"
               placeholder="+998"
+              value={userNum}
               onChange={(e) => setUserNum(e.target.value)}
             />
           </label>
