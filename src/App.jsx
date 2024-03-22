@@ -10,6 +10,7 @@ import Category from "./routes/Category";
 import AllFlowers from "./routes/AllFlowers";
 import Tell from "./components/Tell";
 import GetOrder from "./components/GetOrder";
+import Cursor from "./shared/Cursor";
 
 function App() {
   const [hasOrder, setHasOrder] = useState(false);
@@ -27,22 +28,14 @@ function App() {
       await Aos.init({
         duration: 800,
       });
-      setLoading(false); 
+      setLoading(false);
     };
     initAos();
   }, []);
 
-  // Memoized Header component
-  const MemoizedHeader = React.memo(Header);
-
-  // Memoized Footer component
-  const MemoizedFooter = React.memo(Footer);
-
-  // Memoized Tell component
-  const MemoizedTell = React.memo(Tell);
-
   return (
     <div>
+      <Cursor />
       <BrowserRouter>
         {loading ? (
           <span className="loading loading-ring loading-lg"></span>
