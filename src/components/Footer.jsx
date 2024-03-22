@@ -7,7 +7,7 @@ import flower from "../assets/logo.png";
 function Footer() {
   return (
     <>
-      <footer className="footer items-center p-4 bg-neutral text-neutral-content mt-[100px]">
+      <footer className="footer items-center p-4 bg-base-300 text-base-content mt-[100px] rounded-t-[20px]">
         <aside className="items-center grid-flow-col">
           <img src={flower} alt="logo" className="w-[25px]" />
           <p>Copyright © 2024 - Flowers</p>
